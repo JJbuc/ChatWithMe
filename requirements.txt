@@ -1,0 +1,2 @@
+supabase==2.22.2
+python-dotenv==1.1.1
