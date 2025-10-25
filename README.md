@@ -62,3 +62,12 @@ v2 --> Knowledge graph
 v3 --> Images 
 v4 --> Audio
 v4 --> ranking 
+
+## Architecture
+
+The application architecture is visualized below:
+
+```plaintext
+🧍 User / Viewer  ⇄  🎨 Gradio Frontend  ⇄  🧩 Python Backend (LLMs, logic)
+                                            ⇅
+                                          🗄️ Supabase (DB + Auth + Storage)
