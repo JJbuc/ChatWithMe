@@ -65,9 +65,13 @@ v4 --> ranking
 
 ## Architecture
 
-The application architecture is visualized below:
+The application follows a classic full-stack architecture:
 
 ```plaintext
-🧍 User / Viewer  ⇄  🎨 Gradio Frontend  ⇄  🧩 Python Backend (LLMs, logic)
-                                            ⇅
-                                          🗄️ Supabase (DB + Auth + Storage)
+🧍 User
+   ↓
+🌐 Frontend (HTML + CSS + JS)
+   ↓ (fetch → API calls)
+🐍 Backend (Python, FastAPI / Flask)
+   ↓
+🗄️ Supabase (PostgreSQL, Auth, Storage)
