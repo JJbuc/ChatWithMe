@@ -25,7 +25,8 @@ def get_all_videos(channel_url: str):
     if 'entries' in info:
         for entry in info['entries']:
             if entry and 'url' in entry:
-                video_urls.append(f"https://www.youtube.com/watch?v={entry['url']}")
+                video_urls.append(entry['url'])
+                # video_urls.append(f"https://www.youtube.com/watch?v={entry['url']}")
     return video_urls
 
 
