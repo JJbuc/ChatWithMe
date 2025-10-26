@@ -1,77 +1,78 @@
-# ChatWithMe
-Database for each creator 
-Video
-ffmpeg  ---> 80% if there is 80% similarity then hata do 
----> BLIP model 
----> SAM OWL
----> Sentiment analysis 
----> metadata 
-Transcript
-Description
+# chud.ai - AI Creator Platform
 
+A modern web application that allows users to chat with AI creators powered by AWS Bedrock (Claude-3-Sonnet).
 
-{
-time: 1 - 1:03
-sentiment: angry
-product_placed : iPhone 17
-metadata : 
-caption: 
-transcript : 
-}
+## Features
 
+- 🏠 **Home Page**: Choose your role (User or Creator)
+- 👥 **Creator Selection**: Browse and search through AI creators
+- 💬 **Chat Interface**: Real-time chat with AI creators
+- 🔍 **Smart Search**: Type-ahead search with suggestions
+- 🎨 **Modern UI**: Beautiful gradient design with animations
+- 🤖 **AWS Bedrock Integration**: Powered by Claude-3-Sonnet
+- 📱 **Responsive Design**: Works on desktop and mobile
 
-Creator database
-LLM 
-frontend 
+## Quick Start
 
+1. **Install Dependencies**:
+   ```bash
+   conda activate base
+   pip install -r requirements.txt
+   ```
 
+2. **Start the Server**:
+   ```bash
+   python server.py
+   ```
 
-Knowledge graph --> edges (profit)
+3. **Open in Browser**:
+   ```
+   http://localhost:5001
+   ```
 
+## How to Use
 
+1. **Choose Role**: Click "I'm a User" on the home page
+2. **Select Creator**: Browse creators or use the search bar
+3. **Start Chatting**: Click on any creator to start a conversation
+4. **Type Messages**: Use the chat input to send messages
+5. **Get AI Responses**: Receive intelligent responses from your chosen creator
 
-Text chuks (embedding)
+## Available Creators
 
+- 🤖 **Alex Chen** - AI & Machine Learning Expert
+- ✍️ **Sarah Johnson** - Creative Writing Specialist  
+- 💼 **Marcus Rodriguez** - Business Strategy Consultant
+- 📊 **Emma Wilson** - Data Science Expert
+- 💻 **David Kim** - Software Development Specialist
 
-user (embedding)
+## API Endpoints
 
-for all text_chinks:
-return most similar 
+- `GET /` - Main application
+- `POST /api/chat` - Chat with AI creators
+- `GET /api/health` - Health check
+- `GET /api/creators` - Get creators list
 
+## Technical Stack
 
-user --> I want an iPhone which is 6 inch and 2 years old. 
-context --> base on chunks 
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Backend**: Flask (Python)
+- **AI**: AWS Bedrock (Claude-3-Sonnet)
+- **Styling**: Custom CSS with gradients and animations
 
-Based on questiona nd chunk answer the question
+## Deployment
 
+The application is ready for deployment on:
+- AWS S3 + CloudFront
+- AWS EC2
+- AWS Amplify
+- Heroku
+- Any Python hosting platform
 
-Disadvantage?
-1. Semantic search ---> 
+## Debugging
 
+Open browser console (F12) to see detailed logs and use `debugApp()` function for debugging information.
 
-Knowledge graph --> Find relevant node and perform hops 
-Maximize the profit 
+## License
 
-
-User --> I want an iPhone which is 6 inch and 2 years old.
-Trace the graph while also maximizing profit 
-
-
-v1 --> Transript + description --- > LLM ---> Frontend (both UI)
-v2 --> Knowledge graph
-v3 --> Images 
-v4 --> Audio
-v4 --> ranking 
-
-## Architecture
-
-The application follows a classic full-stack architecture:
-
-```plaintext
-🧍 User
-   ↓
-🌐 Frontend (HTML + CSS + JS)
-   ↓ (fetch → API calls)
-🐍 Backend (Python, FastAPI / Flask)
-   ↓
-🗄️ Supabase (PostgreSQL, Auth, Storage)
+MIT License
