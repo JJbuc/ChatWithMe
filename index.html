@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chud.ai - AI Creator Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>chud.ai</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn" onclick="showPage('home')">Home</button>
+                <button class="nav-btn" onclick="showPage('creator')">Creators</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        <div class="hero">
+            <div class="container">
+                <h2>Choose Your Role</h2>
+                <p>Select how you'd like to interact with our AI creators</p>
+                
+                <div class="role-cards">
+                    <div class="role-card" onclick="selectRole('user')">
+                        <h3>I'm a User</h3>
+                        <p>Browse and chat with AI creators</p>
+                    </div>
+                    <div class="role-card" onclick="selectRole('creator')">
+                        <h3>I'm a Creator</h3>
+                        <p>Create and manage AI personalities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creator Selection Page -->
+    <div id="creatorPage" class="page">
+        <div class="container">
+            <h2>Choose Your AI Creator</h2>
+            <p>Select an AI creator to start chatting with</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="creatorSearch" placeholder="Search creators..." autocomplete="off">
+                <div id="searchSuggestions" class="search-suggestions"></div>
+            </div>
+            
+            <!-- Creators Grid -->
+            <div id="creatorsGrid" class="creators-grid">
+                <!-- Creators will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chatPage" class="page">
+        <div class="chat-container">
+            <div class="chat-header">
+            <div class="creator-info">
+                <div class="creator-avatar" id="creatorAvatar">
+                    <img src="photos/Marques_Brownlee.jpg" alt="AI Creator" class="avatar-img">
+                </div>
+                <div class="creator-details">
+                    <h3 id="creatorName">AI Creator</h3>
+                    <p id="creatorSpecialty">AI Assistant</p>
+                </div>
+            </div>
+                <button class="back-btn" onclick="showPage('creator')">← Back to Creators</button>
+            </div>
+            
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <button class="message-avatar-btn">MB</button>
+                        </div>
+                        <div class="message-content">
+                            <p>Hello! I'm <span id="welcomeCreatorName">AI Creator</span>, your <span id="welcomeSpecialty">AI Assistant</span>. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+                <button id="sendMessageBtn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>AI is thinking...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
